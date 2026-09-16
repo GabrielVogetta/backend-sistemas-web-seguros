@@ -1,5 +1,5 @@
 async function getUsers() {
-  const url = 'http://localhost:8080/users';
+  const url = 'http://localhost:8080/api/users';
   
   try {
     const response = await fetch(url);
@@ -15,4 +15,4 @@ async function getUsers() {
   }
 };
 
-getUsuarios();
+getUsers();
