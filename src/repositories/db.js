@@ -1,4 +1,4 @@
-import { readFileSync, existsSync, writeFile } from 'fs'; // {Ler o arquivo de forma assíncrona, Verificar se o arquivo existe antes de tentar ler}
+import { readFileSync, existsSync, writeFile } from 'fs'; // {Ler o arquivo de forma assíncrona, Verificar se o arquivo existe antes de tentar ler e escrever}
 const path = './data.json';
 
 function selectUsers() {
