@@ -3,7 +3,7 @@ import bcrypt from 'bcrypt';
 
 const users = [
     {
-        "id": 1789645811266,
+        "id": "1789645811266",
         "name": "Gabriel Vogetta",
         "email": "gabriel.vogetta@example.com",
         "password": "$2b$10$i29v0hYwWywrPCUiwVXB7.o9YogA4nBrmNzDCUPRxcceDYynhNybu", // 123
@@ -53,7 +53,7 @@ export default function usersService() {
         addUser: (user) => {
             const hash = bcrypt.hashSync(user.password, 10);
             user.password = hash;
-            user.id = Date.now();
+            user.id = Date.now().toString();
             users.push(user);
             return {
                 id: user.id,

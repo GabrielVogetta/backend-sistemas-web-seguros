@@ -5,14 +5,11 @@ const router = Router();
 
 router.post('/login', usersController().login);
 
-router.get('/api/users', usersController().getUsers);
+router.get('/users', usersController().getUsers);
+router.post('/users', usersController().createUser);
+router.put('/users/:id', usersController().updateUser);
+router.delete('/users/:id', usersController().deleteUser);
 
-router.post('/api/users', usersController().createUser);
-
-router.put('/api/users', usersController().updateUser);
-
-router.delete('/api/users', usersController().deleteUser);
-
-router.get('/api/profile', usersController().getProfile);
+router.get('/profile', usersController().getProfile);
 
 export default router;
