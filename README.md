@@ -64,14 +64,14 @@ Desenvolver uma API REST segura para um sistema de controle de usuários, utiliz
 - Não listar senhas de usuários
 
 #### Problemas identificados
-Admin pode excluir ou alterar a si mesmo\
-Necessário maior segurança do JWT_SECRET\
-Definir origens no cors\
-Definir rate limit\
-Implementar refresh tokens\
-Padronização do código projeto\
- - Exemplo: Em algumas funções é realizada as "validações negativas" antes e em outra funções não. Essa despadronização pode dificultar escalabilidade e resolução de bugs
-Persistência do dados
+- Admin pode excluir ou alterar a si mesmo
+- Necessário maior segurança do JWT_SECRET
+- Definir origens no cors
+- Definir rate limit
+- Implementar refresh tokens
+- Padronização do código projeto
+  Exemplo: Em algumas funções é realizada as "validações negativas" antes e em outra funções não. Essa despadronização pode dificultar escalabilidade e resolução de bugs
+- Persistência do dados
 - Somente admin pode realizar cadastro: Em uma aplicação que será utilizada internamente em uma empresa, pode ser possível, mas ao realizar o primeiro login, o usuário deverá redefinir sua senha
 - Configurar roles de forma dinâmica
 - Controle de acesso a rotas inexistentes
@@ -80,9 +80,9 @@ Persistência do dados
 ### 5. Como rodar localmente
 [Instalar Node.js](https://nodejs.org/en/download)
 
-git clone https://github.com/GabrielVogetta/backend-sistemas-web-seguros.git  
-cd backend-sistemas-web-seguros\
-`npm install`\
+`git clone https://github.com/GabrielVogetta/backend-sistemas-web-seguros.git`   
+`cd backend-sistemas-web-seguros`  
+`npm install`  
 `node index.js`
 
 ### 6. Referências
@@ -99,6 +99,6 @@ cd backend-sistemas-web-seguros\
 [dotenv](https://www.npmjs.com/package/dotenv) | [repositório](https://github.com/motdotla/dotenv)
 
 #### Documentações
-[Using middleware | ExpressJs](https://expressjs.com/en/5x/guide/using-middleware/)\
-[Markdown | Github](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#line-breaks)\
-[RFC 6750](https://www.rfc-editor.org/info/rfc6750/#section-3.1)
+Como usar middlewares em expressjs [Using middleware | ExpressJs](https://expressjs.com/en/5x/guide/using-middleware/)\
+Como formatar README.md [Markdown | Github](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#line-breaks)\
+Como receber e tratar Bearer Tokens | [RFC 6750](https://www.rfc-editor.org/info/rfc6750/#section-3.1)
