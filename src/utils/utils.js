@@ -1,10 +1,10 @@
-export default function createResponse() {
+export function createResponse() {
     return {
         badRequest: (res, message) => {
             return res.status(400).json({ error: message });
         },
         unauthorized: (res, message) => {
-            return res.status(401).json({ error: message });
+            return res.status(401).json({ error: message })
         },
         ok: (res, data) => {
             return res.status(200).json(data);
