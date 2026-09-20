@@ -49,6 +49,11 @@ export default function middlewares(){
             if(req.user.role == "user"){
                 return createResponse().unauthorized(res, 'Access denied');
             }
+
+            // Operador não pode alterar role
+            if(req.user.role && req.user.role == "operator"){
+                return createResponse().unauthorized(res, 'Access denied');
+            }
             
             // Encontrar e retornar usuário através do id enviado pelo middleware
             const userById = usersService().findById(req.user.id);

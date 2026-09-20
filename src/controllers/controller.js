@@ -116,7 +116,7 @@ export default function usersController(){
             return createResponse().notFound(res, 'User not found.');
         };
             
-        return createResponse().created(res, {
+        return createResponse().updated(res, {
             message: 'User updated successfully!',
             data: {
                 id: updatedUser.id,
