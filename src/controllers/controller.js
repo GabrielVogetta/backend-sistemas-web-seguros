@@ -65,6 +65,10 @@ export default function usersController(){
             return createResponse().badRequest(res, 'Name, Email, Password, Role are required');
         };
 
+        if (role !== "admin" || role !== "operator" || role !== "user") {
+            return createResponse().badRequest(res, 'Invalid role.');
+        }
+
         // Verificar se email já não existe
         if (usersService().existsUserByEmail(email)) {
             return createResponse().badRequest(res, 'This email already exists.');
@@ -100,15 +104,22 @@ export default function usersController(){
 
         const { name, email, role } = req.body;
 
+        
         if (!name || !email) {
             return createResponse().badRequest(res, 'Name, Email, Role are required');
         };
-     
+        
+        if(role){
+            if (role !== "admin" || role !== "operator" || role !== "user") {
+                return createResponse().badRequest(res, 'Invalid role.');
+            }
+        }
+
         const updatedUser = {
             id: req.params.id,
             name,
             email,
-            role: role || null
+            role
         };
 
         // Verificar se usuário foi encontrado e atualizado

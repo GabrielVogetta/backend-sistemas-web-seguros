@@ -46,9 +46,17 @@ export default function middlewares(){
         },
         requireAdminOrOperator: (req, res, next) => {
 
-            // Operador não pode alterar role
-            if(req.body.role && req.user.role == "operator"){
+            // Usuários que não são admin ou operator
+            if (req.user.role !== "admin" && req.user.role !== "operator") {
                 return createResponse().unauthorized(res, 'Access denied');
+            }
+
+            // Em métodos que necessitam de body
+            if(req.method !== 'GET'){
+                // Operador não pode alterar role
+                if(req.body.role && req.user.role == "operator"){
+                    return createResponse().unauthorized(res, 'Access denied');
+                }
             }
             
             // Encontrar e retornar usuário através do id enviado pelo middleware
