@@ -66,7 +66,7 @@ export default function usersController(){
         };
 
         // Se role for diferente de admin, operator e usar
-        if (role !== "admin" && role && "operator" && role !== "user") {
+        if (role !== "admin" && role !== "operator" && role !== "user") {c
             return createResponse().badRequest(res, 'Invalid role.');
         }
 
@@ -111,6 +111,7 @@ export default function usersController(){
         };
         
         // Se role é enviado e for diferente de admin, operator e usar
+        // Se role não for enviada, apaga a role.
         if(role){
             if (role !== "admin" && role !== "operator" && role !== "user") {
                 return createResponse().badRequest(res, 'Invalid role.');
