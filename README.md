@@ -87,8 +87,6 @@ Nesse contexto, é possível expandir para que o usuário logue apenas usando go
 `git clone https://github.com/GabrielVogetta/backend-sistemas-web-seguros.git`   
 `cd backend-sistemas-web-seguros`  
 `npm install`\
-`echo "PORT=3000" >> .env`\
-`echo "JWT_SECRET=<secret>" >> .env`\
 `node index.js`
 
 #### Como testar

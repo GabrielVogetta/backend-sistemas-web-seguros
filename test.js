@@ -1,6 +1,4 @@
-// Simular token salvo no frontend
 // Em caso real, seria salvo em cookie ou localstorage
-let token = "";
 let user = {};
 let users = [];
 
@@ -12,7 +10,6 @@ async function login(email, password) {
         body: JSON.stringify({email, password})
     });
     const data = await response.json();
-    token = await data.user.token;
     user = data.user;
   } catch (error) {
     console.log(error);
@@ -22,7 +19,7 @@ async function login(email, password) {
 async function deleteUser(id) {
     const response = await fetch(`http://localhost:${process.env.PORT || 3000}/users/${id}`, {
         method: 'DELETE',
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${user.token}` }
     });
 
     return await response.json();
@@ -31,7 +28,7 @@ async function deleteUser(id) {
 async function returnUsers(){
    const response = await fetch(`http://localhost:${process.env.PORT || 3000}/users`, {
         method: 'GET',
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${user.token}` }
     });
  
     const data = await response.json();
@@ -44,7 +41,9 @@ async function test(){
   console.log("Primeiro passo: admin loga")
   
   // Receber lista de usuários
-  users = await returnUsers();
+  console.log(user.token);
+  users = await returnUsers(user.token);
+  console.log(users);
   // Verificar admin
   console.log("Segundo passo: admin existe")
   console.log(users.find(user => user.role === "admin"));
