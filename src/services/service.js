@@ -47,7 +47,7 @@ export default function usersService() {
                       role: user.role
                     }, 
                     jwtSecret,
-                    { expiresIn: '1h' }
+                    { expiresIn: '30m' }
                 );
 
                 // Retornar usuário sem a senha

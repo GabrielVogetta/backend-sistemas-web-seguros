@@ -31,7 +31,7 @@ export default function middlewares(){
         requireAdmin: (req, res, next) => {
             // Somente admin pode acessar o próximo recurso
             if(req.user.role !== "admin"){
-                return createResponse().unauthorized(res, 'Access denied');
+                return createResponse().forbidden(res, 'Access denied');
             }
             
             // Encontrar e retornar usuário através do id enviado pelo middleware
@@ -39,7 +39,7 @@ export default function middlewares(){
             
             // Verificar se usuário existe e a role enviada pelo middleware é a mesma
             if (!userById || userById.role !== req.user.role) {
-                return createResponse().unauthorized(res, 'Access denied');
+                return createResponse().forbidden(res, 'Access denied');
             }
 
             return next();
@@ -48,14 +48,20 @@ export default function middlewares(){
 
             // Usuários que não são admin ou operator
             if (req.user.role !== "admin" && req.user.role !== "operator") {
-                return createResponse().unauthorized(res, 'Access denied');
+                return createResponse().forbidden(res, 'Access denied, you are not admin ou operator.');
             }
 
             // Em métodos que necessitam de body
             if(req.method !== 'GET'){
                 // Operador não pode alterar role
                 if(req.body.role && req.user.role == "operator"){
-                    return createResponse().unauthorized(res, 'Access denied');
+                    return createResponse().forbidden(res, 'Access denied, the operator cannot update role.');
+                }
+                if(req.body.role == null && req.user.role == "operator"){
+                    return createResponse().forbidden(res, 'Access denied, the operator cannot update role.');
+                }
+                if(req.body.role == "" && req.user.role == "operator"){
+                    return createResponse().forbidden(res, 'Access denied, the operator cannot update role.');
                 }
             }
             
@@ -64,7 +70,7 @@ export default function middlewares(){
             
             // Verificar se usuário existe e a role enviada pelo middleware é a mesma
             if (!userById || userById.role !== req.user.role) {
-                return createResponse().unauthorized(res, 'Access denied');
+                return createResponse().forbidden(res, 'Access denied');
             }
 
             return next();
