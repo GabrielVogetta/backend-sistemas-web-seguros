@@ -45,13 +45,9 @@ export default function middlewares(){
             return next();
         },
         requireAdminOrOperator: (req, res, next) => {
-            // Somente admin ou operator pode acessar o próximo recurso
-            if(req.user.role == "user"){
-                return createResponse().unauthorized(res, 'Access denied');
-            }
 
             // Operador não pode alterar role
-            if(req.user.role && req.user.role == "operator"){
+            if(req.body.role && req.user.role == "operator"){
                 return createResponse().unauthorized(res, 'Access denied');
             }
             

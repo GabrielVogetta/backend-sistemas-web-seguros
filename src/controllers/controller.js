@@ -100,7 +100,7 @@ export default function usersController(){
 
         const { name, email, role } = req.body;
 
-        if (!name || !email || !role) {
+        if (!name || !email) {
             return createResponse().badRequest(res, 'Name, Email, Role are required');
         };
      
@@ -108,7 +108,7 @@ export default function usersController(){
             id: req.params.id,
             name,
             email,
-            role
+            role: role || null
         };
 
         // Verificar se usuário foi encontrado e atualizado
