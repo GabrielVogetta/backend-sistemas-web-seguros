@@ -91,6 +91,11 @@ Nesse contexto, é possível expandir para que o usuário logue apenas usando go
 `echo "JWT_SECRET=<secret>" >> .env`\
 `node index.js`
 
+#### Como testar
+`node index.js`
+Abrir novo terminal:
+`node test.js`
+
 Observação: sistema irá rodar na porta 3000 e gerar um jwt_secret genérico caso arquivo .env não seja configurado.
 
 ### 6. Referências
