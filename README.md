@@ -79,10 +79,10 @@ Desenvolver uma API REST segura para um sistema de controle de usuários, utiliz
 ### 5. Front-end 
 Não foi possível implementar front-end, porém no código test.js há exemplos de como é realizada essa comunicação, através da função fetch. 
 
-### OAuth 2.0
+### 6. OAuth 2.0
 Nesse contexto, é possível expandir para que o usuário logue apenas usando google ou github. Provedor terceiro retornaria se a identidade é válida, e o sistema geraria um token jwt, mas sem necessidade de gerar hash e armazenar senha, o que seria mais performático, visto que o processo de encriptação e desencriptação de senhas exige processamento.
 
-### 5. Como rodar localmente
+### 7. Como rodar localmente
 [Instalar Node.js](https://nodejs.org/en/download)
 
 `git clone https://github.com/GabrielVogetta/backend-sistemas-web-seguros.git`   
@@ -97,7 +97,7 @@ Abrir novo terminal:
 
 Observação: sistema irá rodar na porta 3000 e gerar um jwt_secret genérico caso arquivo .env não seja configurado.
 
-### 6. Referências
+### 8. Referências
 #### Artigos
 [Layered Architecture](https://medium.com/@ankitpartap24/layered-architecture-in-node-js-5ef94e846ec4)
 
