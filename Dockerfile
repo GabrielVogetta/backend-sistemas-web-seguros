@@ -13,8 +13,8 @@ RUN npm install
 # Copia o restante da aplicação
 COPY . .
 
-# Expoe a porta 8080 para rodar aplicação
-EXPOSE 8080
+# Expoe a porta 3000 para rodar aplicação
+EXPOSE 3000
 
 # Roda aplicação com expressjs
 CMD ["node", "index.js"]
@@ -23,4 +23,4 @@ CMD ["node", "index.js"]
 ## Para buildar e gerar imagem
    ### docker build -t my-nodejs-app .
 ## Para rodar
-   ### docker run -it --rm -p 8080:8080 --name my-running-app my-nodejs-app 
+   ### docker run -it --rm -p 3000:3000 --name my-running-app my-nodejs-app 

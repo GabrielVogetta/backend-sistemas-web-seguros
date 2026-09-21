@@ -1,6 +1,9 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 
+// Caso process.env.JWT_SECRET não exista, não irá interromper aplicação
+const jwtSecret = process.env.JWT_SECRET || "<secret>";
+
 const users = [
     {
         id: "1789645811266",
@@ -43,7 +46,7 @@ export default function usersService() {
                       id: user.id,
                       role: user.role
                     }, 
-                    process.env.JWT_SECRET,
+                    jwtSecret,
                     { expiresIn: '1h' }
                 );
 
