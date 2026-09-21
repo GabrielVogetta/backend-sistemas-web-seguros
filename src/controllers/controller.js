@@ -65,7 +65,8 @@ export default function usersController(){
             return createResponse().badRequest(res, 'Name, Email, Password, Role are required');
         };
 
-        if (role !== "admin" || role !== "operator" || role !== "user") {
+        // Se role for diferente de admin, operator e usar
+        if (role !== "admin" && role && "operator" && role !== "user") {
             return createResponse().badRequest(res, 'Invalid role.');
         }
 
@@ -109,8 +110,9 @@ export default function usersController(){
             return createResponse().badRequest(res, 'Name, Email, Role are required');
         };
         
+        // Se role é enviado e for diferente de admin, operator e usar
         if(role){
-            if (role !== "admin" || role !== "operator" || role !== "user") {
+            if (role !== "admin" && role !== "operator" && role !== "user") {
                 return createResponse().badRequest(res, 'Invalid role.');
             }
         }
