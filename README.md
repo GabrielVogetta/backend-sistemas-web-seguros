@@ -74,6 +74,7 @@ Desenvolver uma API REST segura para um sistema de controle de usuários, utiliz
 - Rate limit não definido: implementar rate limit em middlewares, sobretudo em rotas públicas
 - Despadronização do código do projeto
   Exemplo, em algumas funções é realizada as "validações negativas" antes e em outra funções não. Essa despadronização pode dificultar escalabilidade e resolução de bugs: garantir que as camadas do código realizem a validação de erros antes.
+- .env visível: alguém que tem acesso aos arquivos do projeto poderá forjar credencias de admin ou outras roles, necessário ignorar no .gitignore e garantir que as configurações de ambiente estão estáveis
 
 ### 5. Front-end 
 Não foi possível implementar front-end, porém no código test.js há exemplos de como é realizada essa comunicação, através da função fetch. 
