@@ -1,4 +1,4 @@
-## Repositório para projeto da matéria de Sistemas Seguros Web - Téc. em Análise e Desenvolvimento de Sistemas
+# Repositório para projeto da matéria de Sistemas Seguros Web - Téc. em Análise e Desenvolvimento de Sistemas
 
 ### 1. Objetivo do projeto
 Desenvolver uma API REST segura para um sistema de controle de usuários, utilizando Tokens JWT e implementando Role-Based Acess Control (RBAC).
@@ -64,6 +64,7 @@ Desenvolver uma API REST segura para um sistema de controle de usuários, utiliz
 - Não listar senhas de usuários
 
 #### Problemas identificados
+- Sem validação de email
 - Admin pode excluir ou alterar a si mesmo
 - Necessário maior segurança do JWT_SECRET
 - Definir origens no cors
