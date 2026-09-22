@@ -60,7 +60,7 @@ async function test(){
   users = await returnUsers();
   
   // Verificar admin
-  console.log("Quinto passo: admin não existe")
+  console.log("Quinto passo, admin não existe:")
   console.log(users.find(user => user.role === "admin"));
 }
 

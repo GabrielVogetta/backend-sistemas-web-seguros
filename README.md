@@ -96,21 +96,3 @@ Abrir novo terminal:
 `node test.js`
 
 Observação: sistema irá rodar na porta 3000 e gerar um jwt_secret genérico caso arquivo .env não seja configurado.
-
-### 8. Referências
-#### Artigos
-[Layered Architecture](https://medium.com/@ankitpartap24/layered-architecture-in-node-js-5ef94e846ec4)
-
-#### Dependências
-
-[nodejs](https://nodejs.org/pt-br) | [repositório](https://github.com/nodejs/node)\
-[express js](https://expressjs.com/) | [repositório](https://github.com/expressjs/express)\
-[bcrypt](https://www.npmjs.com/package/bcrypt) | [repositório](https://github.com/kelektiv/node.bcrypt.js)\
-[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) | [repositório](https://github.com/auth0/node-jsonwebtoken)\
-[cors](https://www.npmjs.com/package/cors) | [repositório](https://github.com/expressjs/cors)\
-[dotenv](https://www.npmjs.com/package/dotenv) | [repositório](https://github.com/motdotla/dotenv)
-
-#### Documentações
-Como usar middlewares em expressjs [Using middleware | ExpressJs](https://expressjs.com/en/5x/guide/using-middleware/)\
-Como formatar README.md [Markdown | Github](https://docs.github.com/pt/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#line-breaks)\
-Como receber e tratar Bearer Tokens | [RFC 6750](https://www.rfc-editor.org/info/rfc6750/#section-3.1)
