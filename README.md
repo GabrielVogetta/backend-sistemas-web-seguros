@@ -95,4 +95,6 @@ Nesse contexto, é possível expandir para que o usuário logue apenas usando go
 Abrir novo terminal:
 `node test.js`
 
-Observação: sistema irá rodar na porta 3000 e gerar um jwt_secret genérico caso arquivo .env não seja configurado.
+Observações: 
+1. Sistema irá rodar na porta 3000 e gerar um jwt_secret genérico caso arquivo .env não seja configurado.
+2. Para rodar teste é necessário rodar "node index.js" e após "node test.js" em paralelo ou rodar o arquivo "./entrypoint.sh"
